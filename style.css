@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     background-color: #f3e8e8;
     border-radius: 0 0 45px  45px;
 }
@@ -21,7 +21,7 @@
     padding: 0;
 }
 
-.nav-links a {
+a {
     text-decoration: none;
     font-size: 18px;
     color: black;
@@ -29,6 +29,25 @@
 
 .nav-links a:hover {
     text-decoration: underline;
+}
+
+button {
+    background-color: chocolate;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b45b3e;
+}
+
+/* Area principal / Main */
+main {
+    margin: 25px;
+    padding: 20px;
 }
 
 /* Container das trufas */
@@ -75,10 +94,25 @@
 
 /* Footer */
 footer {
-    background-color: red;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 20px;
-    width: 100%;
+    padding: 15px 25px;
+    background-color: #f3e8e8;
+    border-radius: 45px 45px 0 0;
+    margin-top: 252px;
+}
+
+footer div {
+    display: flex;
+    gap: 10px;
+}
+
+footer a {
+    font-size: 20px;
+    color: black;
+}
+
+footer a:hover {
+    color: chocolate;
 }
