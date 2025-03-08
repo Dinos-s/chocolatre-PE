@@ -16,7 +16,7 @@ footer {
     padding: 15px 25px;
     background-color: #f3e8e8;
     border-radius: 45px 45px 0 0;
-    margin-top: 252px;
+    margin-top: 50px;
 }
 
 footer div {

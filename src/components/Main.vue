@@ -14,15 +14,21 @@
 
 <style scoped>
 .main {
-    margin: 25px;
+    margin: auto;
     padding: 20px;
-    height: 41vh; /* Ocupa a altura total da tela */   
+    height: 75vh; /* Ocupa a altura total da tela */ 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
 }
 
 .container_trufas {
   display: flex;
   justify-content: space-around; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
+  flex-wrap: wrap; /* Quebra a linha quando não houver mais espaço */
   gap: 15px; /* Espaçamento entre os cards */
   margin: 0 auto; /* Centraliza o contêiner na tela */
 }
