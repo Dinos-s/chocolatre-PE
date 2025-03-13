@@ -1,9 +1,10 @@
 <template>
     <div class="card">
-        <img :src=imagem alt="Trufa de brigadeiro">
+        <img :src="imagem" alt="Trufa de brigadeiro">
         <div class="description">
             <h4>Trufa de chocolate</h4>
             <p>Trufa de chocolate ao leite com recheio de brigadeiro.</p>
+            <button @click="addCart()">Add no carrinho</button>
         </div>
     </div>
 </template>
@@ -44,6 +45,19 @@
 }
 </style>
 
-<script setup>
-import imagem from '../assets/download.png'
+<script>
+
+export default {
+    name: "CardItem",
+    data(){
+        return {
+            imagem: "/download.png"
+        }
+    },
+    methods: {
+        addCart() {
+            alert('A navegação foi impedida.')
+        }
+    }
+}
 </script>
