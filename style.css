@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f5f0;
+    color: #4a3c31;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom:2px solid #d4a574;
+}
+
+h1 {
+    color: #8b4513;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #a67c52;
+    font-size: 1rem;
+}
+
+/* Form de entrada */
+.input-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5d4a36;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d4a574;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #8b4513;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.quantity-btn {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s;
+}
+
+.quantity-btn:hover {
+    background-color: #6b3410;
+}
+
+.disable {
+    background-color: #f1dacb;
+    cursor: no-drop;
+}
+
+#quantidade {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    margin: 0 15px;
+    border: 2px solid #d4a574;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.add-button {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: backgroud-color .3s;
+}
+
+.add-button:hover {
+    background-color: #8b6b47;
+}
+
+/* Lista de trufas */
+.truffle-list {
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+h2 {
+    color: #8b4513;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8d9c5;
+}
+
+.truffle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0e6d8;
+}
+
+.truffle-item:last-child {
+    border-bottom: none;
+}
+
+.truffle-info {
+    flex: 1;
+}
+
+.truffle-name {
+    font-weight: 600;
+    color: #5d4a36;
+    margin-bottom: 5px;
+}
+
+
+.truffle-details {
+    font-size: .9rem;
+    color: #8a7866;
+}
+
+.truffle-quantity {
+    background-color: #f0e6d8;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #8b4513;
+    min-width: 60px;
+    text-align: center;
+}

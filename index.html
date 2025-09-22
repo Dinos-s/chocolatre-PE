@@ -1,16 +1,53 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolatra_PE</title>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cocolatra</title>
+</head>
+<body>
+  <header>
+    <h1>Cocolatra</h1>
+    <p class="subtitle">Controle de estoque de trufas artesanais</p>
+  </header>
 
-    <!-- Link dos icones  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <section class="input-section">
+    <div class="input-group">
+      <label>Qual o sabor da trufa: </label>
+      <input type="text" id="sabor" placeholder="Ex: Brigadeiro">
+    </div>
+
+    <div class="quantity-controls">
+      <button class="quantity-btn" id="menos">-</button>
+      <input type="number" value="5" id="quantidade">
+      <button class="quantity-btn" id="mais">+</button>
+    </div>
+
+    <button class="add-button">Adicionar</button>  
+  </section>
+
+  <section class="truffle-list">
+    <h2>Listagem das trufas</h2>
+    
+    <div class="truffle-item">
+      <div class="truffle-info">
+        <div class="truffle-name">Bem Casado</div>
+        <div class="truffle-details">Adicionado em: 01/02/2025</div>
+      </div>
+      <div class="truffle-quantity">10</div>
+    </div>
+
+    <div class="truffle-item">
+      <div class="truffle-info">
+        <div class="truffle-name">Oreo</div>
+        <div class="truffle-details">Adicionado em: 01/01/2023</div>
+      </div>
+      <div class="truffle-quantity">25</div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
 </html>
