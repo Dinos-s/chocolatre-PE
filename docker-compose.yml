@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres-trufas
+    environment:
+      POSTGRES_USER: trufas_user
+      POSTGRES_PASSWORD: ego218
+      POSTGRES_DB: trufas_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
