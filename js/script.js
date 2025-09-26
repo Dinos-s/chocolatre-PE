@@ -45,10 +45,15 @@ mais.addEventListener('click', ()=>{
 // Carrega as trufas na lista
 async function carregarTrufas() {
     try {
+        showLoading(true)
+
         const trufas = await getAllTrufas();
         atualizarLista(trufas);        
     } catch (error) {
         console.error('Error loading trufas:', error);
+        showMessage("Erro ao carregar as trufas. Tente novamente mais tarde." + error.message, "error");
+    } finally {
+        showLoading(false)
     }
 }
 
@@ -61,15 +66,19 @@ async function adicionarTrufa() {
     const quantidadeValue = Number(qtd.value);
 
     if (saborValue === '' || quantidadeValue === 0) {
-        alert("Por favor, insira o sabor e a quantidade da trufa.");
+        showMessage("Por favor, insira o sabor e a quantidade da trufa.", "error");
         return;
     }
 
     try {
+        showLoading(true);
+
         await addTrufa({
             sabor: saborValue, 
             quantidade: quantidadeValue
         });
+
+        showMessage("Trufa adicionada com sucesso!", "sucess");
 
         // zerando o formulário
         sabor.value = '';
@@ -78,6 +87,8 @@ async function adicionarTrufa() {
         await carregarTrufas();
     } catch (error) {
         console.error('Error adding trufa:', error);
+    } finally {
+        showLoading(false);
     }
 }
 
@@ -105,6 +116,36 @@ function atualizarLista(trufas){
 // Formata a data para o padrão brasileiro
 function formatarData(dataISO) {
     return new Date(dataISO).toLocaleDateString('pt-BR');
+}
+
+// Mostra as menssagens de erro/sucesso
+function showMessage(msg, type = "info") {
+    const existingMsg = document.querySelector('.msg')
+    if (existingMsg) existingMsg.remove()
+
+    const msgElement = document.createElement('div')
+    msgElement.className = `msg msg-${type}`
+    msgElement.textContent = msg
+
+    document.querySelector('.input-section').after(msgElement)
+
+    // mensagem desaparece após 5 segundos
+    setTimeout(() => {
+        msgElement.remove()
+    }, 5000)
+}
+
+// Função de carregamento
+function showLoading(show) {
+    let loader = document.querySelector('.loader')
+    if (show && !loader) {
+        loader = document.createElement('div')
+        loader.className = 'loader'
+        loader.textContent = 'Carregando...'
+        document.querySelector('.input-section').after(loader)
+    } else if (!show && loader) {
+        loader.remove()
+    }
 }
 
 // Executa a função ao carregar o DOM
