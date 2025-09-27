@@ -11,7 +11,14 @@ const allowedOrigins = [
 ];
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    // {
+    //     origin: allowedOrigins,
+    //     credentials: false,
+    //     methods: ['GET', 'POST'],
+    //     allowedHeaders: ['Content-Type', 'Authorization']
+    // }
+));
 routes(app)
 
 testaConnection()
