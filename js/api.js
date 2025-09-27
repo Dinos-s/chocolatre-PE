@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://chocolatre-pe.onrender.com';
 
 // Fetch the list of trufas from the backend
 export async function getAllTrufas() {
