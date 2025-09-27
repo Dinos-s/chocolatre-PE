@@ -10,17 +10,26 @@ const qtd = document.getElementById('quantidade')
 // Chama as trufas ao carregar a página
 await carregarTrufas();
 
+// carrega os butões conforme a qtd de trufas inseridas
+atualizarBtns()
+
 menos.addEventListener('click', ()=>{
     let quanto = Number(qtd.value)
     if (quanto > 0) {
         qtd.value = quanto - 1
-    }    
+        atualizarBtns()
+    }
 })
 
 mais.addEventListener('click', ()=>{
     let quanto = Number(qtd.value)
-    qtd.value = quanto + 1;
+    if (quanto < 999) {
+        qtd.value = quanto + 1
+        atualizarBtns()
+    }
 })
+
+qtd.addEventListener('input', atualizarBtns)
 
 // adicionar.addEventListener('click', function(){
 //     if(sabor.value.trim() === '' || Number(qtd.value) === 0){
@@ -56,7 +65,6 @@ async function carregarTrufas() {
         showLoading(false)
     }
 }
-
 
 // Chama a função para adicionar uma nova trufa
 adicionar.addEventListener('click', adicionarTrufa)
@@ -118,6 +126,28 @@ function formatarData(dataISO) {
     return new Date(dataISO).toLocaleDateString('pt-BR');
 }
 
+function atualizarBtns() {
+    let quanto = Number(qtd.value)
+
+    if (quanto <= 0) {
+        qtd.value = 0
+        menos.disabled = true
+        menos.classList.add('disable')
+    } else {
+        menos.disabled = false
+        menos.classList.remove('disable')
+    }
+
+    if (quanto >= 999) {
+        qtd.value = 999
+        mais.disabled = true
+        mais.classList.add('disable')
+    } else {
+        mais.disabled = false
+        mais.classList.remove('disable')
+    }
+}
+
 // Mostra as menssagens de erro/sucesso
 function showMessage(msg, type = "info") {
     const existingMsg = document.querySelector('.msg')
@@ -137,11 +167,14 @@ function showMessage(msg, type = "info") {
 
 // Função de carregamento
 function showLoading(show) {
-    let loader = document.querySelector('.loader')
+    let loader = document.querySelector('.loader-container')
     if (show && !loader) {
         loader = document.createElement('div')
-        loader.className = 'loader'
-        loader.textContent = 'Carregando...'
+        loader.className = 'loader-container'
+        loader.innerHTML = `
+            <div class="loader"></div>
+            <p class="loader-text">Carregando...</p>
+        `
         document.querySelector('.input-section').after(loader)
     } else if (!show && loader) {
         loader.remove()

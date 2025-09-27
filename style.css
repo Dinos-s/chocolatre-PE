@@ -92,7 +92,8 @@ input[type="text"]:focus {
 
 .disable {
     background-color: #f1dacb;
-    cursor: no-drop;
+    cursor: not-allowed;
+    opacity: .7;
 }
 
 #quantidade {
@@ -201,4 +202,67 @@ h2 {
     background-color: #fff3cd;
     color: #856404;
     border: 1px solid #ffeaa7;
+}
+
+/* Carregando  */
+.loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #6b3410;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    animation: spin 1s linear infinite;
+}
+
+.loader-text {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bod;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* responsivo */
+@media (min-width: 768px) {
+    body {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .input-section {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+    }
+
+    .input-group {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .quantity-controls {
+        margin: 0 20px
+    }
+
+    .add-button {
+        width: auto;
+    }
 }
