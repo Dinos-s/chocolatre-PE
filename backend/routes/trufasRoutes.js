@@ -9,4 +9,4 @@ const routes = (app) => {
     app.post('/', novaTrufa);
 }
 
-export default  routes
+export default routes
