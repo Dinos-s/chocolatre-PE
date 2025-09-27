@@ -7,13 +7,15 @@ const allowedOrigins = [
     'http://localhost:5500',
     'http://127.0.0.1:5500',
     'http://localhost:8080',
-    'https://dinos-s.github.io/'
+    'https://dinos-s.github.io/chocolatre-PE/'
 ];
 
 const app = express();
 app.use(cors({
     origin: allowedOrigins,
     credentials: false,
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 routes(app)
 
