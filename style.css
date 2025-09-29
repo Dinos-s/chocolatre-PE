@@ -177,6 +177,75 @@ h2 {
     text-align: center;
 }
 
+/* Estoque */
+.estoque-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #8B4513;
+    color: white;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-voltar:hover {
+    background: #6B3410;
+}
+
+.estoque h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #8b4513;
+    border-bottom: 2px solid #8b4513;
+    padding-bottom: .5rem;
+}
+
+.estoque-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.estoque-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-left: 4px solid #8B4513;
+}
+
+.estoque-nome {
+    font-weight: 600;
+    color: #5d4a36;
+    font-size: 1.1rem;
+}
+
+.estoque-quantidade {
+    background-color: #f0e6d8;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #8b4513;
+    min-width: 60px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
 /* Estilização da mensagem */
 .msg {
     padding: 10px;
@@ -264,5 +333,30 @@ h2 {
 
     .add-button {
         width: auto;
+    }
+
+    /* Estoque */
+    .estoque {
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    .estoque h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .estoque-item {
+        padding: 20px;
+    }
+
+    .estoque-nome {
+        font-size: 1.3rem;
+    }
+
+    .estoque-quantidade {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        min-width: 80px;
     }
 }
